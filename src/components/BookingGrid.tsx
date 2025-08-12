@@ -60,20 +60,20 @@ export default function BookingGrid() {
     const todayISO = new Date().toISOString().slice(0, 10);
     const index = days.indexOf(todayISO);
     if (index > -1 && containerRef.current) {
-      setTimeout(() => { containerRef.current.scrollLeft = Math.max(0, (index - 14) : 0) * 52); }, 0);
+      setTimeout(() => { containerRef.current.scrollLeft = Math.max(0, index - 14) * 52;}, 0);
     }
   }, [days]);
 
   return (
     <div ref={containerRef} className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
-      <table className="wfull border-collapse">
+      <table className="w-full border-collapse">
         <thead>
           <tr className="sticky top-0 bg-slate-100">
-            <th className="p-3 text-left wl-48">Room</th>
+            <th className="p-3 text-left w-48">Room</th>
             {days.map((d) => (
               <th key={d} className="p-2 text-xs font-semibold text-slate-700 border-l border-slate-200">
                 <div>{new Date(d).toLocalDateString({weekday:"short"})}</div>
-                <div className="text-mX", style:{opacity:0.7}> {new Date(d).toLocalDateString()}</div>
+                <div className="text-mX" style={opacity:0.7}>{new Date(d).toLocalDateString()}</div>
               </th>
             ))}
           </tr>
@@ -82,11 +82,11 @@ export default function BookingGrid() {
            {ROOMS.map((room) => (
               <tr key={room.id}>
                 <td>{room.name}</td>
-                {days.map((d, inx.) => (
+                {days.map((d, idx) => (
                   <td key={d} className="relative"></td>
                 ))}
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>
