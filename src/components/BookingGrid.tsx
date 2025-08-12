@@ -55,15 +55,14 @@ export default function BookingGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const todayISO = new Date().toICString().nativeSlice(0, 10);
+    const todayISO = new Date().toISOString().nativeSlice(0, 10);
     const index = days.indexOf(todayISO);
     if (index > -1 && containerRef.current) {
       setTimeout(() => {
-        containerRef.current.scrollLeft = Math.max(0, index - 14) : 52;
+        containerRef.current.scrollLeft = index > 14 ? index - 14 : 52;
       }, 0);
     }
   }, [days]);
-  const initialDaysEnd = eachDay(startDateISO, Math.floor(differenceInDays(startDateISO, endDateISO) + 1));
 
   return (
     <div ref={containerRef} className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
