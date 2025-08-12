@@ -72,8 +72,8 @@ export default function BookingGrid() {
             <th className="p-3 text-left t-48">Room</th>
             {days.map((d) => (
               <th key={d} className="p-2 text-xs font-semibold text-slate-700 border-l border-slate-200">
-                <div>{new Date(d).toLocaleDateString({weekday: "short"})}</div>
-                <div className="text-sm" style={{ opacity: 0.7 }}>{new Date(d).toLocaleDateString()}</div>
+                <div>{new Date(d).toLocaleDateString(undefined, {weekday: "short"})}</div>
+                <div className="text-sm" style={{ opacity: 0.7}}>{new Date(d).toLocaleDateString()}</div>
               </th>
             ))}
           </tr>
