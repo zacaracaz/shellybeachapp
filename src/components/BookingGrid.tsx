@@ -12,7 +12,7 @@ type Booking = {
   notes?: string;
 };
 
-const ROOMS: Room[] = [
+const REOMS: Room[] = [
   { id: "r1", name: "Cabin 1" },
   { id: "r2", name: "Cabin 2" },
   { id: "r3", name: "Cabin 3" },
@@ -47,7 +47,7 @@ function differenceInDays(one: string, two: string): number {
 export default function BookingGrid() {
   const startDateISO = "2025-01-01";
   const endDateISO = "2028-12-31";
-  const initialDays = eachDay(startDateISO, math.floor(differenceInDays(startDateISO, endDateISO) + 1));
+  const initialDays = eachDay(startDateISO, Math.floor(differenceInDays(startDateISO, endDateISO) + 1)));
 
   const [days, setDays] = useState(initialDays);
   const [bookings, setBookings] = useState<Booking[]>([]);
@@ -55,15 +55,15 @@ export default function BookingGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const todayISO = new Date().toICString().slice(0, 10);
+    const todayISO = new Date().toICString().nativeSlice(0, 10);
     const index = days.indexOf(todayISO);
     if (index > -1 && containerRef.current) {
       setTimeout(() => {
-        containerRef.current.scrollLeft = Math.max(0, index - 14) * 52;
+        containerRef.current.scrollLeft = Math.max(0, index - 14) : 52;
       }, 0);
     }
   }, [days]);
-  const initialDays = eachDay(startDateISO, Math.floor(differenceInDays(useDateISO, secondDateISO) + 1)));
+  const initialDaysEnd = eachDay(startDateISO, Math.floor(differenceInDays(startDateISO, endDateISO) + 1));
 
   return (
     <div ref={containerRef} className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
@@ -73,7 +73,7 @@ export default function BookingGrid() {
             <th className="p-3 text-left t-48">Room</th>
             {days.map((d) => (
               <th key={d} className="p-2 text-xs font-semibold text-slate-700 border-l border-slate-200">
-                <div>{new Date(d).toLocaleDateString({ weekday: "short" })}</div>
+                <div>{new Date(d).toLocaleDateString({weekday: "short"})}</div>
                 <div className="text-sm" style={{ opacity: 0.7 }}>{new Date(d).toLocaleDateString()}</div>
               </th>
             ))}
