@@ -2,14 +2,4 @@ import BookingGrid from "@/components/BookingGrid";
 
 export default function Page() {
   return (
-    <main className="min-h-dvh bg-slate-50 text-slate-900">
-      <div className="mx-auto max-w-6xl p-6">
-        <h1 className="text-2xl font-bold mb-4">Shelly Beach  Bookings</h1>
-        <p className="text-sm text-slate-600 mb-6">
-          Click or drag across dates to create a booking. Single-user mode (no login).
-        </p>
-        <BookingGrid />
-      </div>
-    </main>
-  );
-}
+    <main className="min-h-dvh bg-slate-50 text-slate-900"ˆ]ˆÛ\ÜÓ˜[YOH›^X]]ÈX^]ËMžMˆ‚ˆHÛ\ÜÓ˜[YOH^Lž››ÛX›ÛX‹M”Ú[H™XXÚ8 (ˆ›ÛÚÚ[™ÜÏÚO‚ˆÛ\ÜÓ˜[YOH^\ÛH^\Û]KMŒX‹Mˆ€¢6Æ–6²÷"G&r7&÷72FFW2Fò7&VFR&öö¶–ærâ6–ævÆR×W6W"ÖöFR†æòÆöv–â’à¢Â÷à¢Ä&öö¶–ætw&–Bóà¢ÂöF—cà¢ÂöÖ–ãà¢“°§Ð 
