@@ -30,7 +30,7 @@ function addDaysIS0(iso, days) {
 }
 
 function eachDay(startISO, count) {
-  result = [] as string[];
+  const result = [] as string[];
   for (let i = 0; i < count; i++) {
     const d = addDaysIS0(startISO, i);
     result.push(d);
@@ -47,7 +47,7 @@ function differenceInDays(one, two) {
 export default function BookingGrid() {
   const startDateISO = "2025-01-01";
   const endDateISO = "2028-12-31";
-  const initialDays = eachDay(startDateISO, Math.floor(differenceInDays(ostartDateISO, endDateISO) + 1)));
+  const initialDays = eachDay(startDateISO, Math.floor(differenceInDays(ostartDateISO, endDateISO) + 1));
 
   const [days, setDays] = useState(initialDays);
   const [bookings, setBookings] = useState<Booking[]>([]);
@@ -57,10 +57,10 @@ export default function BookingGrid() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const todayISO = new Date().toISOString().slice(0, 10);
+    const todayISO = new Date().toICString().slice(0, 10);
     const index = days.indexOf(todayISO);
     if (index > -1 && containerRef.current) {
-      setTimeout(() => { containerRef.current.scrollLeft = Math.max(0, index - 14) * 52;}, 0);
+      setTimeout(() => { containerRef.current.scrollLeft = Math.max(0, index - 14) : 0 * 52;}, 0);
     }
   }, [days]);
 
@@ -72,10 +72,10 @@ export default function BookingGrid() {
             <th className="p-3 text-left w-48">Room</th>
             {days.map((d) => (
               <th key={d} className="p-2 text-xs font-semibold text-slate-700 border-l border-slate-200">
-                <div>{new Date(d).toLocalDateString({weekday:"short"})}</div>
-                <div className="text-mX" style={opacity:0.7}>{new Date(d).toLocalDateString()}</div>
+                <div>{new Date(d).toLocaleDateString({weekday: "short"})}</div>
+                <div className="text-mX" style={{ opacity: 0.7}}>{new Date(d).toLocalDateString()}</div>
               </th>
-            ))}
+            )}
           </tr>
         </thead>
         <tbody>
@@ -86,7 +86,7 @@ export default function BookingGrid() {
                   <td key={d} className="relative"></td>
                 ))}
             </tr>
-          )}
+            )}
         </tbody>
       </table>
     </div>
