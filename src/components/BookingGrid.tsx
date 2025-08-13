@@ -79,7 +79,7 @@ export default function BookingGrid() {
           </tr>
         </thead>
         <tbody>
-          {ROOMS.map((room) => (
+            {ROOMS.map((room) => (
               <tr key={room.id}>
                 <td>{room.name}</td>
                 {days.map((d, idx) => (
